@@ -6,25 +6,26 @@ public class Bus {
     private int capacity;
     private ArrayList<Person> passengers;
 
-    public Bus(String destination, int capacity){
+    public Bus(String destination, int capacity) {
         this.destination = destination;
         this.capacity = capacity;
         this.passengers = new ArrayList<Person>();
     }
 
-    public int passengerCount(){
+    public int passengerCount() {
         return this.passengers.size();
     }
 
-    public int getCapacity(){
+    public int getCapacity() {
         return this.capacity;
     }
 
-    public void addPerson(Person person){
-        if(this.passengerCount() > this.capacity){
+    public void addPerson(Person person) {
+        if (this.passengerCount() < this.capacity) {
             this.passengers.add(person);
+        } else {
+            System.out.println("Get orf moi bus!");
         }
-        System.out.println("Get orf moi bus!");
     }
 
     public Person removePerson(){
